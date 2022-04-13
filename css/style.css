@@ -8,6 +8,16 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.main-layout{
+    padding: 8px 22.8px;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
 /* FLEX */
 
 .flex{
@@ -20,6 +30,10 @@ body{
 
 .flex.space-between{
     justify-content: space-between;
+}
+
+.flex.space-around{
+    justify-content: space-around;
 }
 
 /* GRID */
@@ -41,7 +55,7 @@ body{
 /* HEADER */
 header{
     background-color: #ff7f00;
-    height: 33px;
+    height: 40px;
 }
 
 header img{
@@ -62,10 +76,19 @@ footer{
 /* GALLERY */
 
 .gallery-container{
-    padding-top: 100px;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    padding-top: 13.5px;
+    background-color: #e3e3e3;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap: 10px;
+    
 }
 
 .gallery-container img{
     width: 100%;
+}
+
+/* EDITOR */
+
+.editor-container{
+    display: none;
 }

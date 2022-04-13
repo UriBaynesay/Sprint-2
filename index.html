@@ -8,45 +8,160 @@
     <title>Meme Generator</title>
   </head>
   <body>
-    <div class="main-layout flex flex-col">
+    <datalist id="font-list">
+      <option value="ariel"></option>
+      <option value="..."></option>
+    </datalist>
+
+    <div class="flex flex-col">
       <!-- HEADER -->
-      <header class="flex space-between">
-        <div class="logo"><img src="/img/LOGO.png" alt="" /></div>
-        <nav>
-          <ul class="flex clr-list">
-            <li>Gallery</li>
-            <li>About</li>
-          </ul>
-        </nav>
+      <header>
+        <div class="main-layout header-container flex space-between">
+          <div class="logo"><img src="/img/LOGO.png" alt="" /></div>
+          <nav>
+            <ul class="main-layout flex clr-list">
+              <li>Gallery</li>
+              <li>About</li>
+            </ul>
+          </nav>
+        </div>
       </header>
 
       <!-- MAIN -->
       <main>
         <!-- GALLERY -->
-        <section class="gallery-container grid">
-            <img class="img-1" src="/img/meme-imgs (square)/1.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-2" src="/img/meme-imgs (square)/2.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-3" src="/img/meme-imgs (square)/3.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-5" src="/img/meme-imgs (square)/5.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-6" src="/img/meme-imgs (square)/6.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-7" src="/img/meme-imgs (square)/7.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-8" src="/img/meme-imgs (square)/8.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-9" src="/img/meme-imgs (square)/9.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-4" src="/img/meme-imgs (square)/4.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-10" src="/img/meme-imgs (square)/10.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-11" src="/img/meme-imgs (square)/11.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-12" src="/img/meme-imgs (square)/12.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-13" src="/img/meme-imgs (square)/13.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-14" src="/img/meme-imgs (square)/14.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-15" src="/img/meme-imgs (square)/15.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-16" src="/img/meme-imgs (square)/16.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-17" src="/img/meme-imgs (square)/17.jpg" onclick="onImgClick(this)" alt="">
-            <img class="img-18" src="/img/meme-imgs (square)/18.jpg" onclick="onImgClick(this)" alt="">
+        <section class="main-layout gallery-container grid ">
+          <img
+            class="img-1"
+            src="/img/meme-imgs (square)/1.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-2"
+            src="/img/meme-imgs (square)/2.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-3"
+            src="/img/meme-imgs (square)/3.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-5"
+            src="/img/meme-imgs (square)/5.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-6"
+            src="/img/meme-imgs (square)/6.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-7"
+            src="/img/meme-imgs (square)/7.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-8"
+            src="/img/meme-imgs (square)/8.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-9"
+            src="/img/meme-imgs (square)/9.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-4"
+            src="/img/meme-imgs (square)/4.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-10"
+            src="/img/meme-imgs (square)/10.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-11"
+            src="/img/meme-imgs (square)/11.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-12"
+            src="/img/meme-imgs (square)/12.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-13"
+            src="/img/meme-imgs (square)/13.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-14"
+            src="/img/meme-imgs (square)/14.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-15"
+            src="/img/meme-imgs (square)/15.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-16"
+            src="/img/meme-imgs (square)/16.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-17"
+            src="/img/meme-imgs (square)/17.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
+          <img
+            class="img-18"
+            src="/img/meme-imgs (square)/18.jpg"
+            onclick="onImgClick(this)"
+            alt=""
+          />
         </section>
 
-
         <!-- EDITOR -->
-        <section class="editor-container" hidden>editor</section>
+        <section class="main-layout editor-container flex space-around">
+          <canvas id="canvas"></canvas>
+          <div class="control-box flex flex-col" width="500" height="500">
+            <label for="text-input">
+            <input type="text" placeholder="Enter your text" />
+            </label>
+            <button class="move-up">⬆</button>
+            <button class="move-down">⬇</button>
+            <button class="select-next">Select Next Line</button>
+            <button class="size-up">Size-Up</button>
+            <button class="size-down">Size-Down</button>
+            <input type="color" />
+            <input type="select" list="font-list"/>
+            <button class="align-right">Align-Right</button>
+            <button class="align-center">Align-Center</button>
+            <button class="align-left">Align-Left</button>
+            <button class="delete-line">Delete</button>
+            <a href="#">Download</a>
+          </div>
+        </section>
       </main>
 
       <footer>
@@ -54,6 +169,7 @@
       </footer>
     </div>
 
+    <script src="js/editor-controller.js"></script>
     <script src="js/gallery-controller.js"></script>
     <script src="js/main.js"></script>
   </body>
