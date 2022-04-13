@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Meme Generator</title>
-</head>
-<body>
-    hello
+  </head>
+  <body>
+    <div class="main-layout flex flex-col">
+      <!-- HEADER -->
+      <header class="flex space-between">
+        <div class="logo"><img src="/img/LOGO.png" alt="" /></div>
+        <nav>
+          <ul class="flex clr-list">
+            <li>Gallery</li>
+            <li>About</li>
+          </ul>
+        </nav>
+      </header>
 
+      <!-- MAIN -->
+      <main>
+        <!-- GALLERY -->
+        <section class="gallery-container grid">
+            <img class="img-1" src="/img/meme-imgs (square)/1.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-2" src="/img/meme-imgs (square)/2.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-3" src="/img/meme-imgs (square)/3.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-5" src="/img/meme-imgs (square)/5.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-6" src="/img/meme-imgs (square)/6.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-7" src="/img/meme-imgs (square)/7.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-8" src="/img/meme-imgs (square)/8.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-9" src="/img/meme-imgs (square)/9.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-4" src="/img/meme-imgs (square)/4.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-10" src="/img/meme-imgs (square)/10.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-11" src="/img/meme-imgs (square)/11.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-12" src="/img/meme-imgs (square)/12.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-13" src="/img/meme-imgs (square)/13.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-14" src="/img/meme-imgs (square)/14.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-15" src="/img/meme-imgs (square)/15.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-16" src="/img/meme-imgs (square)/16.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-17" src="/img/meme-imgs (square)/17.jpg" onclick="onImgClick(this)" alt="">
+            <img class="img-18" src="/img/meme-imgs (square)/18.jpg" onclick="onImgClick(this)" alt="">
+        </section>
+
+
+        <!-- EDITOR -->
+        <section class="editor-container" hidden>editor</section>
+      </main>
+
+      <footer>
+        <small>© Uri Baynesay 2022</small>
+      </footer>
+    </div>
+
+    <script src="js/gallery-controller.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
