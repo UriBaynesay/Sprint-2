@@ -8,10 +8,11 @@
     <title>Meme Generator</title>
   </head>
   <body>
-    <datalist id="font-list">
-      <option value="ariel"></option>
-      <option value="..."></option>
-    </datalist>
+    <!-- <datalist id="font-list">
+      <option value="impact" label="impact"></option>
+      <option value="ariel" label="Ariel"></option>
+      <option value="david" label="David"></option>
+    </datalist> -->
 
     <div class="flex flex-col">
       <!-- HEADER -->
@@ -146,20 +147,28 @@
           <canvas id="canvas" width="500" height="500"></canvas>
           <div class="control-box flex flex-col">
             <label for="text-input">
-              <input type="text" placeholder="Enter your text" onkeydown="renderText(this.value)"/>
+              <input
+                type="text"
+                placeholder="Enter your text"
+                onkeyup="renderText(this.value)"
+              />
             </label>
-            <button class="move-up" onclick="onMoveText('+')">⬆</button>
-            <button class="move-down" onclick="onMoveText('-')">⬇</button>
+            <button class="move-up" onclick="onMoveText('-')">⬆</button>
+            <button class="move-down" onclick="onMoveText('+')">⬇</button>
             <button class="select-next">Select Next Line</button>
-            <button class="size-up">Size-Up</button>
-            <button class="size-down">Size-Down</button>
-            <input type="color" class="text-color"/>
-            <input type="select" list="font-list" />
-            <button class="align-right">Align-Right</button>
-            <button class="align-center">Align-Center</button>
-            <button class="align-left">Align-Left</button>
-            <button class="delete-line">Delete</button>
-            <a href="#">Download</a>
+            <button class="size-up" onclick="onSizeChange('+')">Size-Up</button>
+            <button class="size-down" onclick="onSizeChange('-')">Size-Down</button>
+            <input type="color" onchange="onColorChange(this.value)" />
+            <select name="font-list" id="font-list"onchange="onFontChange(this.value)">
+              <option value="impact" label="impact"></option>
+              <option value="ariel" label="Ariel"></option>
+              <option value="david" label="David"></option>
+            </select>
+            <button class="align-right" onclick="onAlign('right')">Align-Left</button>
+            <button class="align-center" onclick="onAlign('center')">Align-Center</button>
+            <button class="align-left" onclick="onAlign('left')">Align-Right</button>
+            <button class="delete-line" onclick="onDelete()">Delete</button>
+            <a href="#" onclick="downloadCanvas(this)">Download</a>
           </div>
         </section>
       </main>
