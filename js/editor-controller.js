@@ -17,9 +17,20 @@ function onEditorInit(imgNum) {
   gCtx[CANVAS_INDX.middle] = gElCanvas[CANVAS_INDX.middle].getContext("2d");
   gCtx[CANVAS_INDX.bottom] = gElCanvas[CANVAS_INDX.bottom].getContext("2d");
   gCtx[CANVAS_INDX.download] = gElCanvas[CANVAS_INDX.download].getContext("2d");
+  resizeCanvas();
+  addListeners();
   renderImg(imgNum);
   createMeme(imgNum);
+  // renderCanvas();
   lineFocus();
+}
+
+function addListeners(){
+  window.addEventListener('resize', () => {
+    resizeCanvas()
+    renderImg(getCurrSelectedImg());
+    renderText();
+})
 }
 
 function onNextLine(){
@@ -70,7 +81,7 @@ function renderText() {
     if(idx===0) canvasNum=1;
     else if(idx===1) canvasNum=3;
     else canvasNum=2;
-    drawText(line.txt, 250, 50, color, size, font, align,canvasNum);
+    drawText(line.txt, gElCanvas[CANVAS_INDX.picture].width/2, 50, color, size, font, align,canvasNum);
   });
 }
 
@@ -105,10 +116,10 @@ function downloadCanvas(elLink) {
   const topCanvasPos=parseInt(gElCanvas[CANVAS_INDX.top].style.top);
   const middleCanvasPos=parseInt(gElCanvas[CANVAS_INDX.middle].style.top);
   const bottomCanvasPos=parseInt(gElCanvas[CANVAS_INDX.bottom].style.top);
-  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.picture],0,0);
-  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.top],0,topCanvasPos);
-  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.middle],0,middleCanvasPos);
-  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.bottom],0,bottomCanvasPos);
+  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.picture],0,0,500,500);
+  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.top],25,topCanvasPos,450,100);
+  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.middle],25,middleCanvasPos,450,100);
+  gCtx[CANVAS_INDX.download].drawImage(gElCanvas[CANVAS_INDX.bottom],25,bottomCanvasPos,450,100);
   const data = gElCanvas[CANVAS_INDX.download].toDataURL();
   elLink.href = data;
   elLink.download = "Meme.jpg";

@@ -1,5 +1,19 @@
 "use strict"
 
+function resizeCanvas() {
+  const elContainer = document.querySelector('.canvas-container');
+  // debugger
+  gElCanvas[CANVAS_INDX.picture].width = elContainer.offsetWidth;
+  gElCanvas[CANVAS_INDX.picture].height = elContainer.offsetHeight;
+  gElCanvas[CANVAS_INDX.top].width = elContainer.offsetWidth;
+  // gElCanvas[CANVAS_INDX.top].height = gElCanvas[CANVAS_INDX.picture].height/5;
+  gElCanvas[CANVAS_INDX.middle].width = elContainer.offsetWidth;
+  // gElCanvas[CANVAS_INDX.middle].height = gElCanvas[CANVAS_INDX.picture].height/5;
+  gElCanvas[CANVAS_INDX.bottom].width = elContainer.offsetWidth;
+  // gElCanvas[CANVAS_INDX.bottom].height = gElCanvas[CANVAS_INDX.picture].height/5;
+}
+
+
 function clearCanvas(elCanvas,ctx) {
     ctx.clearRect(0, 0, elCanvas.width, elCanvas.height);
 }

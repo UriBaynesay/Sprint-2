@@ -50,6 +50,10 @@ function setLineTxt(txt) {
   gMeme.lines[gMeme.selectedLineIdx].txt = txt;
 }
 
+function getCurrSelectedImg(){
+  return gMeme.selectedImgId;
+}
+
 function getCurrSelectedTxt() {
   return gMeme.lines[gMeme.selectedLineIdx].txt;
 }
