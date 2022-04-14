@@ -14,7 +14,7 @@
       <option value="david" label="David"></option>
     </datalist> -->
 
-    <div class="flex flex-col">
+    <div class="body-container flex flex-col">
       <!-- HEADER -->
       <header>
         <div class="main-layout header-container flex space-between">
@@ -143,7 +143,7 @@
         </section>
 
         <!-- EDITOR -->
-        <section class="main-layout editor-container flex space-around">
+        <section class="main-layout editor-container flex">
           <div class="canvas-container">
             <canvas id="canvas" width="500" height="500"></canvas>
             <canvas
@@ -173,12 +173,22 @@
           </div>
           <div class="control-box flex flex-col">
             <input
-              type="text"
+            type="text"
               id="text-input"
               placeholder="Enter your text"
               onkeyup="onSetText(this.value)"
             />
+            <select
+              name="font-list"
+              id="font-list"
+              onchange="onFontChange(this.value)">
+              <option value="impact" label="impact"></option>
+              <option value="ariel" label="Ariel"></option>
+              <option value="david" label="David"></option>
+            </select>
+            <input type="color" onchange="onColorChange(this.value)" />
 
+            <div class="control-box-btns grid">
             <button class="move-up" onclick="onMoveText('-')">⬆</button>
             <button class="move-down" onclick="onMoveText('+')">⬇</button>
             <button class="add-line" onclick="onAddLine()">➕</button>
@@ -189,16 +199,6 @@
             <button class="size-down" onclick="onSizeChange('-')">
               Size-Down
             </button>
-            <input type="color" onchange="onColorChange(this.value)" />
-            <select
-              name="font-list"
-              id="font-list"
-              onchange="onFontChange(this.value)"
-            >
-              <option value="impact" label="impact"></option>
-              <option value="ariel" label="Ariel"></option>
-              <option value="david" label="David"></option>
-            </select>
             <button class="align-right" onclick="onAlign('right')">
               Align-Left
             </button>
@@ -209,6 +209,7 @@
               Align-Right
             </button>
             <button class="delete-line" onclick="onDelete()">Delete</button>
+          </div>
             <a href="#" onclick="downloadCanvas(this)">Download</a>
           </div>
         </section>
