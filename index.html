@@ -37,31 +37,7 @@
         <!-- EDITOR -->
         <section class="main-layout editor-container flex">
           <div class="canvas-container">
-            <canvas id="canvas" width="500" height="500"></canvas>
-            <canvas
-              id="top-text-canvas"
-              width="450"
-              height="100"
-              style="top: 35px; right: 25px"
-            ></canvas>
-            <canvas
-              id="middle-text-canvas"
-              width="450"
-              height="100"
-              style="top: 180px; right: 25px"
-            ></canvas>
-            <canvas
-              id="bottom-text-canvas"
-              width="450"
-              height="100"
-              style="top: 350px; right: 25px"
-            ></canvas>
-            <canvas
-              id="download-canvas"
-              width="500"
-              height="500"
-              style="display: none"
-            ></canvas>
+            <canvas id="canvas"></canvas>
           </div>
           <div class="control-box flex flex-col">
             <input
@@ -102,7 +78,7 @@
             </button>
             <button class="delete-line" onclick="onDelete()"><img src="img/controls/delete.png" alt=""></button>
           </div>
-            <a href="#" onclick="downloadCanvas(this)">Download</a>
+            <a onclick="downloadCanvas(this)">Download</a>
           </div>
         </section>
       </main>
@@ -113,6 +89,7 @@
     </div>
 
     <script src="js/utils.js"></script>
+    <script src="js/services/gallery.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/editor-controller.js"></script>
     <script src="js/gallery-controller.js"></script>

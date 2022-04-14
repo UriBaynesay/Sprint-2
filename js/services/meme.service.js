@@ -1,5 +1,6 @@
 "use strict";
 var gMeme;
+const gSizeChange = 10;
 
 function changeCurrSelected(){
     if(gMeme.selectedLineIdx===gMeme.lines.length-1) gMeme.selectedLineIdx=0;
@@ -20,6 +21,7 @@ function createNewMemeLine(){
         align: "center",
         color: "white",
         font: "impact",
+        offSetY:0,
       }
 }
 
