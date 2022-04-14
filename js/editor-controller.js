@@ -55,14 +55,14 @@ function onSetText(txt) {
   renderMemeCanvas(getCurrSelectedImg());
 }
 
-function renderText() {
+function renderText(isDownload=false) {
   const { lines, selectedImgId, selectedLineIdx } = getMeme();
   lines.forEach((line, idx) => {
     const color = line.color;
     const size = line.size;
     const align = line.align;
     const font = line.font;
-    if (idx === selectedLineIdx) {
+    if (idx === selectedLineIdx&!isDownload) {
       let recPosY;
       if (selectedLineIdx === 0) recPosY = 0;
       else if (selectedLineIdx === 1)
@@ -127,8 +127,16 @@ function onDelete() {
   renderMemeCanvas(getCurrSelectedImg());
 }
 
-function downloadCanvas(elLink) {
+function downloadCanvas() {
+  const elLink=document.querySelector('.download-link')
+  let img = new Image();
+  img.src = `img/meme-imgs (square)/${getCurrSelectedImg()}.jpg`;
+  img.onload = () => {
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
+    renderText(true);
     const data = gElCanvas.toDataURL();
     elLink.href = data;
     elLink.download = "Meme.jpg";
+    elLink.click();
+  };  
 }
