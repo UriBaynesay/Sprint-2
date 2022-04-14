@@ -121,8 +121,6 @@ header li {
   transition: box-shadow 0.2s;
 }
 
-
-
 @media (min-width: 801px) {
   .btn-toggle-menu {
     display: none;
@@ -214,6 +212,7 @@ footer {
   border: 0px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
 
 .editor-container a {
   background-color: white;
