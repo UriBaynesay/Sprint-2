@@ -1,6 +1,28 @@
 "use strict";
 var gMeme;
 
+function changeCurrSelected(){
+    if(gMeme.selectedLineIdx===gMeme.lines.length-1) gMeme.selectedLineIdx=0;
+    else gMeme.selectedLineIdx++;
+}
+
+function addLine(){
+  if(gMeme.lines.length===3){
+    return
+  }
+        gMeme.lines[gMeme.selectedLineIdx+1]=createNewMemeLine();
+}
+
+function createNewMemeLine(){
+    return {
+        txt: "",
+        size: 50,
+        align: "center",
+        color: "white",
+        font: "impact",
+      }
+}
+
 function deleteTxt(){
     gMeme.lines[gMeme.selectedLineIdx].txt='';
 }
@@ -32,6 +54,10 @@ function getCurrSelectedTxt() {
   return gMeme.lines[gMeme.selectedLineIdx].txt;
 }
 
+function getCurrSelectedIdx() {
+    return gMeme.selectedLineIdx;
+  }
+
 function getMeme() {
   return gMeme;
 }
@@ -41,13 +67,7 @@ function createMeme(imgNum) {
     selectedImgId: imgNum,
     selectedLineIdx: 0,
     lines: [
-      {
-        txt: "",
-        size: 50,
-        align: "center",
-        color: "white",
-        font: "impact",
-      },
-    ],
+      createNewMemeLine()
+    ]
   };
 }

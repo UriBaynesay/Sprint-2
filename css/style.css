@@ -91,4 +91,19 @@ footer{
 
 .editor-container{
     display: none;
+    background-color: #e3e3e3;
+}
+
+.canvas-container{
+    height: 500px;
+    width: 500px;
+    position: relative;
+}
+
+.canvas-container>*{
+    position: absolute;
+}
+
+.canvas-container .line-focus{
+    border: dotted gray 3px;
 }

@@ -144,29 +144,70 @@
 
         <!-- EDITOR -->
         <section class="main-layout editor-container flex space-around">
-          <canvas id="canvas" width="500" height="500"></canvas>
+          <div class="canvas-container">
+            <canvas id="canvas" width="500" height="500"></canvas>
+            <canvas
+              id="top-text-canvas"
+              width="450"
+              height="100"
+              style="top: 35px; right: 25px"
+            ></canvas>
+            <canvas
+              id="middle-text-canvas"
+              width="450"
+              height="100"
+              style="top: 180px; right: 25px"
+            ></canvas>
+            <canvas
+              id="bottom-text-canvas"
+              width="450"
+              height="100"
+              style="top: 350px; right: 25px"
+            ></canvas>
+            <canvas
+              id="download-canvas"
+              width="500"
+              height="500"
+              style="display: none"
+            ></canvas>
+          </div>
           <div class="control-box flex flex-col">
-            <label for="text-input">
-              <input
-                type="text"
-                placeholder="Enter your text"
-                onkeyup="renderText(this.value)"
-              />
-            </label>
+            <input
+              type="text"
+              id="text-input"
+              placeholder="Enter your text"
+              onkeyup="onSetText(this.value)"
+            />
+
             <button class="move-up" onclick="onMoveText('-')">⬆</button>
             <button class="move-down" onclick="onMoveText('+')">⬇</button>
-            <button class="select-next">Select Next Line</button>
+            <button class="add-line" onclick="onAddLine()">➕</button>
+            <button class="select-next" onclick="onNextLine()">
+              Select Next Line
+            </button>
             <button class="size-up" onclick="onSizeChange('+')">Size-Up</button>
-            <button class="size-down" onclick="onSizeChange('-')">Size-Down</button>
+            <button class="size-down" onclick="onSizeChange('-')">
+              Size-Down
+            </button>
             <input type="color" onchange="onColorChange(this.value)" />
-            <select name="font-list" id="font-list"onchange="onFontChange(this.value)">
+            <select
+              name="font-list"
+              id="font-list"
+              onchange="onFontChange(this.value)"
+            >
               <option value="impact" label="impact"></option>
               <option value="ariel" label="Ariel"></option>
               <option value="david" label="David"></option>
             </select>
-            <button class="align-right" onclick="onAlign('right')">Align-Left</button>
-            <button class="align-center" onclick="onAlign('center')">Align-Center</button>
-            <button class="align-left" onclick="onAlign('left')">Align-Right</button>
+            <button class="align-right" onclick="onAlign('right')">
+              Align-Left
+            </button>
+            <button class="align-center" onclick="onAlign('center')">
+              Align-Center
+            </button>
+            <button class="align-left" onclick="onAlign('left')">
+              Align-Right
+            </button>
             <button class="delete-line" onclick="onDelete()">Delete</button>
             <a href="#" onclick="downloadCanvas(this)">Download</a>
           </div>
@@ -178,6 +219,7 @@
       </footer>
     </div>
 
+    <script src="js/utils.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/editor-controller.js"></script>
     <script src="js/gallery-controller.js"></script>
